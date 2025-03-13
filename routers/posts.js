@@ -2,33 +2,33 @@ const express = require("express");
 const router = express.Router();
 
 //index
-route.get("/" , (req,res) => {
+router.get("/", (req, res) => {
     res.send("Lista dei post");
 });
 
 //show
-route.get("/:id", (req, res) => {
-    res.send(`Dettagli del post con id: ${postId}`);
+router.get("/:id", (req, res) => {
+    res.send(`Dettagli del post con id: ${req.params.id}`);
 });
 
 //store
-route.post("/", (req, res) => {
-    res.send(`Creazione nuovo post`);
+router.post("/", (req, res) => {
+    res.send("Creazione nuovo post");
 });
 
 //update
-route.put("/:id", (req, res) => {
-    res.send(`Modifica totale del post con id: ${postId}`);
+router.put("/:id", (req, res) => {
+    res.send(`Modifica totale del post con id: ${req.params.id}`);
 });
 
 //modify
-route.patch("/:id", (req, res) => {
-    res.send(`Modifica parziale del post con id: ${postId}`);
+router.patch("/:id", (req, res) => {
+    res.send(`Modifica parziale del post con id: ${req.params.id}`);
 });
 
 //delete
-route.delete("/:id", (req, res) => {
-    res.send(`Eliminazione del post con id: ${postId}`);
+router.delete("/:id", (req, res) => {
+    res.send(`Eliminazione del post con id: ${req.params.id}`);
 });
 
 module.exports = router;

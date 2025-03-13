@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
-
-const postId = req.params.id
+const port = 3001;
 
 //importazione router
 const postsRouter = require("./routers/posts")
@@ -11,9 +9,10 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
+//home route
 app.get('/', (req, res) => {
-    res.send('Hello Bloggers!');
+  res.send('Hello Bloggers!');
 });
 
-//middleware
-app.use("/api/v1/posts", postsRouter);
+//registro il router con il prefisso /posts
+app.use("/posts", postsRouter);
